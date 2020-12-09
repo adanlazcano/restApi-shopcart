@@ -1,0 +1,32 @@
+@request = http://localhost:3000/api/products
+
+###
+GET {{request}}
+###
+GET {{request}}?size=8&page=0&name=beer
+###
+POST {{request}}
+Content-Type:application/json
+
+{
+    "name":"skirt",
+    "description" :"white",
+    "price" :120.56
+    
+}
+###
+GET {{request}}/5fd01e9a89fdff38ec51ebef
+###
+PUT {{request}}/5fd01e9a89fdff38ec51ebef
+Content-Type: application/json
+
+{
+    "name":"beer",
+    "description" :"some brands",
+    "price" :100.50,
+     "done" : true
+}
+###
+DELETE {{request}}/5fd01e9a89fdff38ec51ebef
+###
+GET {{request}}/done
